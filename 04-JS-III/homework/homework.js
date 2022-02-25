@@ -66,12 +66,7 @@ function arrayContiene(array, elemento) {
   // Comprueba si el elemento existe dentro de "array"
   // Devuelve "true" si está, o "false" si no está
   // Tu código:
-  for(var i=0; i<array.length; i++){
-    if(array[i] === elemento){
-      return true
-    }
-  }
-  return false
+  return array.includes(elemento)
 }
 
 
@@ -91,13 +86,11 @@ function promedioResultadosTest(resultadosTest) {
   // "resultadosTest" debe ser una matriz de enteros (int/integers)
   // Itera (en un bucle) los elementos del array, calcula y devuelve el promedio de puntajes
   // Tu código:
-  var acumulador=0
+  var total=0
   for(var i=0; i<resultadosTest.length; i++){
-    acumulador = acumulador + resultadosTest[i]
+    total = total + resultadosTest[i]
   }
-  var promedio = acumulador / resultadosTest.length
-  return promedio
-
+  return total / resultadosTest.length;
 }
 
 
@@ -105,13 +98,7 @@ function numeroMasGrande(numeros) {
   // "numeros" debe ser una matriz de enteros (int/integers)
   // Devuelve el número más grande
   // Tu código:
-  var masGrande = numeros[0]
-  for(var i=0; i<numeros.length; i++){
-    if(numeros[i] > masGrande){
-      masGrande = numeros[i]
-    }
-  }
-  return masGrande
+  return Math.max.apply(null, numeros)
 }
 
 
@@ -137,7 +124,7 @@ function cuentoElementos(arreglo){
 
   var contador = 0
   for(var i=0; i<arreglo.length; i++){
-      if(arreglo[i] > 18){
+      if(arreglo[i] > 18){  
         contador = contador + 1
       }
     }
@@ -164,7 +151,7 @@ function empiezaConNueve(n) {
   //inicia con 9 y false en otro caso.
   //Escribe tu código aquí
 
-  var str = n.toString();
+  var str = n.toString(); 
   
   if(str[0] === "9"){
     return true
